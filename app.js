@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
-
+import helmet from 'helmet';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import router from "./routes/api.js";
@@ -23,6 +23,7 @@ const app = express();
 app.use(cors());
 app.use(express.json({limit:MAX_JSON_SIZE}));
 app.use(express.urlencoded({extended: URL_ENCODE}));
+app.use(helmet());
 app.use(cookieParser());
 // Rate Limiting middleware
 const limiter =rateLimit({windowMs:REQUEST_TIME,max:REQUEST_NUMBER});

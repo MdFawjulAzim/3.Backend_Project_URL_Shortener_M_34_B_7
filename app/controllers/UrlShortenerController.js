@@ -15,3 +15,17 @@ export const createShortenerURL =async (req,res)=>{
         return res.status(500).json({message:e.message});
     }
 }
+
+export const redirectOriginalURL = async (req, res)=>{
+    try{
+        if(!req.params.code){
+            return res.status(400).json({message:"Please provide params code"});
+        }
+        const result = await UrlShortenerService.redirectOriginalURL(req.params.code);
+
+        return res.redirect(result.originalUrl);
+
+    }catch(e){
+        return res.status(500).json({message:e.message});
+    }
+}

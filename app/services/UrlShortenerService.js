@@ -27,3 +27,12 @@ export const createShortenerURL = async (originalUrl)=>{
 
     return result;
 }
+
+
+export const redirectOriginalURL =async (urlCode)=>{
+    let url = await URLModel.findOne({urlCode});
+    if(!url){
+        return res.status(404).json({message: "Invalid URL Code"});
+    }
+    return url;
+}

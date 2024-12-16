@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "2e9ca4d9-e41a-4c74-bbf7-f961e4558783",
+		"name": "Mern others",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38179196"
+	},
+	"item": [
+		{
+			"name": "3.Backend_Project_URL_Shortener_M_34_B_7",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"originalUrl\":\"https://ostad.app/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/SHORTENER_BASE_URL",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"SHORTENER_BASE_URL"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
